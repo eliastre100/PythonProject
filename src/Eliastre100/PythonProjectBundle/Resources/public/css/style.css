@@ -119,6 +119,23 @@ section h2{
 	border-radius: 4px;
 }
 
+.error{
+	position: absolute;
+	top: 40%;
+	margin-left: 13em;
+	left: 0;
+	right: 0;
+	padding: 0 2rem;
+	line-height: 1.5rem;
+	text-align: center;
+}
+
+.errorTitle{
+	margin: -5.5rem 0 .5rem;
+	line-height: 2;
+	font-size: 1.5rem;
+}
+
 /*header*/
 .actions{
 	position: fixed;
@@ -156,4 +173,8 @@ section h2{
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight: 700;
 	font-style: italic;
+}
+
+.fa{
+	color: black;
 }

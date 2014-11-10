@@ -119,25 +119,21 @@ section h2{
 	border-radius: 4px;
 }
 
-.errorTitle{
-	font: normal 1em/1.7 "Open Sans", Helvetica, Arial, sans-serif;
-	line-height: 2;
-	font-size: 1.5rem;
-	font-weight: bold;
-	word-wrap: break-word;
-overflow-wrap: break-word;
-	color: #333;
-}
-
 .error{
-	margin-left: 18em;
 	position: absolute;
-	top: 25%;
-	left:0;
+	top: 40%;
+	margin-left: 13em;
+	left: 0;
 	right: 0;
 	padding: 0 2rem;
 	line-height: 1.5rem;
 	text-align: center;
+}
+
+.errorTitle{
+	margin: -5.5rem 0 .5rem;
+	line-height: 2;
+	font-size: 1.5rem;
 }
 
 /*header*/
@@ -154,10 +150,6 @@ overflow-wrap: break-word;
 
 .actions li{
 	display: inline-block;
-}
-
-.fa{
-	color: black;
 }
 
 .actions i{
@@ -181,4 +173,8 @@ overflow-wrap: break-word;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight: 700;
 	font-style: italic;
+}
+
+.fa{
+	color: black;
 }
