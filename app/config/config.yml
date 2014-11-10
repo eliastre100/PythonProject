@@ -33,7 +33,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ FOSUserBundle ]
+    bundles:        [ FOSUserBundle, Eliastre100PythonProjectBundle]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

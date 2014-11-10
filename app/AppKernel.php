@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Eliastre100\UserBundle\Eliastre100UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Eliastre100\PythonProjectBundle\Eliastre100PythonProjectBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

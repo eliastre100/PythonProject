@@ -1,0 +1,11 @@
+eliastre100_python_project_homepage:
+    path:     /
+    defaults: { _controller: Eliastre100PythonProjectBundle:Default:index }
+
+eliastre100_python_project_load_exo:
+    path:     /ajax/load/{tp}/{id}
+    defaults: { _controller: Eliastre100PythonProjectBundle:Ajax:loadEx }
+
+eliastre100_python_project_load_tree:
+    path:     /ajax/load/tree
+    defaults: { _controller: Eliastre100PythonProjectBundle:Ajax:loadTree }

@@ -1,0 +1,34 @@
+<h2>Exercice 2 : Aire</h2>
+<div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed lectus at dolor posuere tristique. Mauris posuere viverra sapien, at mollis tortor tempus ultricies. Cras tempus et massa ac fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas in posuere lectus. Nullam tempor, sem vitae sagittis laoreet, urna urna posuere arcu, ac luctus risus nisl vitae lacus. Quisque accumsan commodo facilisis. Praesent ac velit dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse dignissim dictum quam at vehicula. Curabitur a consectetur metus. Nam lacinia porttitor dignissim. Duis ex turpis, ultricies vel sodales non, tristique ac est. Nulla elementum risus orci, in dignissim nulla rutrum cursus.<br />
+
+Donec dapibus lacinia neque id ultricies. Cras mattis massa id sem gravida bibendum. Vestibulum consequat sit amet magna eget porttitor. Nullam ut sapien orci. Aliquam mattis neque sit amet venenatis condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus convallis mauris ac turpis interdum, ut ultrices turpis tempor. Duis ultricies dapibus diam, a fermentum lorem malesuada quis. Vestibulum imperdiet purus sollicitudin risus egestas gravida. Nulla quis erat sed lacus consequat ultrices. In quis sodales nibh. Ut tincidunt ipsum a tortor accumsan viverra. Donec et eros non neque maximus sodales at in dui. Phasellus ac pulvinar lacus, vitae posuere eros. Sed placerat tristique nisl vel porta. Maecenas elementum ullamcorper ex sed aliquet.
+
+</div>
+
+<p class="code">
+# -*- coding: latin-1 -*-<br />
+<br />
+longeur = 10.05 # longeur rouleau<br />
+largeur = 0.53 # largeur rouleau<br />
+<br />
+longeur_user = float(input("entrer la longeur en m ")) # dimension piece<br />
+largeur_user = float(input("entrer la largeur en m ")) # dimension piece<br />
+hauteur_user = float(input("entrer la hauteur en m ")) # dimension piece<br />
+<br />
+nombre_de_bandes_par_rouleau = longeur//hauteur_user<br />
+print("le nombre de bandes par rouleaux est : ", nombre_de_bandes_par_rouleau)<br />
+<br />
+perimetre = longeur * largeur   # calcul perimètre de la pièce<br />
+print("le périmètre de la pièce est : ", perimetre)<br />
+<br />
+bandes_requises = perimetre / largeur<br />
+print("le nombre total de bandes est : ", bandes_requises)<br />
+<br />
+rouleaux_requis = bandes_requises // nombre_de_bandes_par_rouleau<br />
+print("le nombre total de rouleaux est : ", rouleaux_requis)<br />
+</p>
+<ul class="download">
+<a href="#"><li>Telecharger exemple</li></a><!--
+--><a href="#"><li>Telecharger reponse</li></a>
+</ul>
+<p class="online">Mis en ligne le 17 Janvier 2014 a 18h13 par Antecs</p>

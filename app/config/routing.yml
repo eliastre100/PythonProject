@@ -1,3 +1,7 @@
+eliastre100_python_project:
+    resource: "@Eliastre100PythonProjectBundle/Resources/config/routing.yml"
+    prefix:   /
+
 eliastre100_user:
     resource: "@Eliastre100UserBundle/Resources/config/routing.yml"
     prefix:   /
