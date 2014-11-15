@@ -20,8 +20,8 @@
 			</div>
 			<div class="actions">
 				<ul>
-					<li title="Ajouter un element"><i class="fa fa-plus"></i></li>
-					<li title="Suprimer un element"><i class="fa fa-minus"></i></li>
+					<li title="Ajouter un element"><a href="#"  onClick="actionLoad('{{ path('eliastre100_python_actions_add') }}')" data-reveal-id="Modal"><i class="fa fa-plus"></i></a></li>
+					<li title="Suprimer un element"><a href="#"  onClick="actionLoad('{{ path('eliastre100_python_actions_remove') }}')" data-reveal-id="Modal"><i class="fa fa-minus"></a></i></li>
 					<li class="disconnect" title="Deconexion"><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-unlink"></i></a><li>
 				</ul>
 			</div>
@@ -36,6 +36,13 @@
 				<p class="errorExp">Try to open a doc.</p>
 			</div>
 		</section>
+		<div id="Modal" class="reveal-modal">
+     		<div class="modal">
+     			<h3>Please wait</h3>
+     			<p>Content will be loaded in a few seconds.</p>
+     		</div>
+     		<a class="close-reveal-modal">&#215;</a>
+		</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		{% javascripts '@Eliastre100PythonProjectBundle/Resources/public/js/*' %}
         	<script type="text/javascript" src="{{ asset_url }}"></script>

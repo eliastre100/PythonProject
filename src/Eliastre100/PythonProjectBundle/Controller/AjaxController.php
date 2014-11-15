@@ -15,4 +15,14 @@ class AjaxController extends Controller
     {
     	return $this->render('Eliastre100PythonProjectBundle:Load:list.html.twig');
     }
+
+    public function addAction($step)
+    {
+    	return $this->render('Eliastre100PythonProjectBundle:Add:step_'.$step.'.html.twig');
+    }
+
+    public function removeAction($step)
+    {
+    	return $this->render('Eliastre100PythonProjectBundle:Remove:step_'.$step.'.html.twig');
+    }
 }

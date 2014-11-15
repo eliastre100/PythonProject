@@ -9,3 +9,11 @@ eliastre100_python_project_load_exo:
 eliastre100_python_project_load_tree:
     path:     /ajax/load/tree
     defaults: { _controller: Eliastre100PythonProjectBundle:Ajax:loadTree }
+
+eliastre100_python_actions_add:
+    path:     /ajax/add/{step}
+    defaults: { _controller: 'Eliastre100PythonProjectBundle:Ajax:add', step: 1 }
+
+eliastre100_python_actions_remove:
+    path:     /ajax/remove/{step}
+    defaults: { _controller: 'Eliastre100PythonProjectBundle:Ajax:remove', step: 1 }
