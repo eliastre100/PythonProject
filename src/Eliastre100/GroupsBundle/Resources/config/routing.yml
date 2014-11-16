@@ -1,0 +1,3 @@
+eliastre100_groups_create:
+    path:     /groups/create
+    defaults: { _controller: Eliastre100GroupsBundle:Groups:create }

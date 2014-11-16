@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Eliastre100\UserBundle\Eliastre100UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Eliastre100\PythonProjectBundle\Eliastre100PythonProjectBundle(),
+            new Eliastre100\GroupsBundle\Eliastre100GroupsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

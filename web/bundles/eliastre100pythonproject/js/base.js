@@ -13,3 +13,13 @@ function actionLoad(url){
 		$('.modal').empty().append(data); 
 	});	
 }
+
+function loadStep(num){
+
+	var url = document.getElementById('step' + num).value;
+	var place = parseInt(num)+1;
+	alert(url);
+	$.get(url, {}, function(data){
+		$('#modal' + place).empty().append(data); 
+	});
+}
