@@ -12,6 +12,7 @@ class GroupsController extends Controller
     {
     	$group = new groups();
 	    $form = $this->createFormBuilder($group)
+            ->setAction($this->generateUrl('eliastre100_groups_create'))
 	    	->add('name', 'text')
 	        ->add('save', 'submit')
 	        ->getForm();
@@ -19,16 +20,14 @@ class GroupsController extends Controller
         $form->handleRequest($request);
 
     	if ($form->isValid()) {
-        // fait quelque chose comme sauvegarder la tâche dans la bdd
-    		$user = $this->container->get('security.context')->getToken()->getUser();
+    		
+            $user = $this->container->get('security.context')->getToken()->getUser();
     		$group->setOwner($user);
     		$em = $this->getDoctrine()->getManager();
     		$em->persist($group);
     		$em->flush();
-    		return $this->render('Eliastre100GroupsBundle:Create:form.html.twig', array(
-	            'form' => $form->createView(),
-	        ));	
-        	//return $this->redirect($this->generateUrl('eliastre100_user_homepage', array('name' => 'test')));
+        	
+            return $this->redirect($this->generateUrl('eliastre100_python_project_homepage'));
     	}else{
     		
 	        return $this->render('Eliastre100GroupsBundle:Create:form.html.twig', array(

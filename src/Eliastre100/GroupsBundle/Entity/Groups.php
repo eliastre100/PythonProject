@@ -29,7 +29,7 @@ class Groups
     private $name;
 
     /**
-    * @ORM\OneToOne(targetEntity="Eliastre100\UserBundle\Entity\User", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="Eliastre100\UserBundle\Entity\User")
     */
     private $owner;
 
