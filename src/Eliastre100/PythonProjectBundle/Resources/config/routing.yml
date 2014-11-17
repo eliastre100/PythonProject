@@ -17,3 +17,7 @@ eliastre100_python_actions_add:
 eliastre100_python_actions_remove:
     path:     /ajax/remove/{step}
     defaults: { _controller: 'Eliastre100PythonProjectBundle:Ajax:remove', step: 1 }
+
+eliastre100_python_actions_Tp_create:
+    path:     /ajax/Tp/create
+    defaults: { _controller: 'Eliastre100PythonProjectBundle:Tp:create'}

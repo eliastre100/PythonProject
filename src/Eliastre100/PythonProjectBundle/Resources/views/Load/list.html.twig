@@ -1,14 +1,6 @@
 <ul>
-	<li>TP n°1
-		<ul>
-			{% set one = 1 %}
-			<li><a class="AjaxLoad" href="{{ path('eliastre100_python_project_load_exo', {'tp': 1, 'id': 1 }) }}">Exo n°1</a></li>
-			<li><a class="AjaxLoad" href="http://python.eliastre100.fr/ajax/load/ID_tp/Id_exo">Exo n°2</a></li>
-			<li>Exo n°3</li>
-		</ul>
-	</li>
-
-	<li>TP n°2
+	{% for tp in Tps %}
+	<li>{{ tp.name }}
 		<ul>
 			<li>Exo n°1</li>
 			<li>Exo n°2</li>
@@ -16,14 +8,5 @@
 			<li>Exo n°4</li>
 		</ul>
 	</li>
-
-	<li>TP n°3
-		<ul>
-			<li>Exo n°1</li>
-			<li>Exo n°2</li>
-			<li>Exo n°3</li>
-			<li>Exo n°4</li>
-			<li>Exo n°5</li>
-		</ul>
-	</li>
+	{% endfor %}
 </ul>
