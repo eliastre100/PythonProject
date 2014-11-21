@@ -17,4 +17,5 @@ Project to help organisation during ISN (Informatique et sciences du numérique)
 2] Certifications
 ----------
 
-![insight.sensiolabs.com](https://insight.sensiolabs.com/projects/d96399b1-5c10-40d3-ba04-2f16f5337a88/mini.png)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/d96399b1-5c10-40d3-ba04-2f16f5337a88/mini.png)](https://insight.sensiolabs.com/projects/d96399b1-5c10-40d3-ba04-2f16f5337a88)
+[![Build Status](https://travis-ci.org/eliastre100/PythonProject.svg)](https://travis-ci.org/eliastre100/PythonProject)
