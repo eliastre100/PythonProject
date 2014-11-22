@@ -13,7 +13,7 @@ class TpController extends Controller
         $tp = new Tps();
         $form = $this->createFormBuilder($tp)
             ->setAction($this->generateUrl('eliastre100_python_actions_Tp_create'))
-            ->add('name', 'text')
+            ->add('name', 'text') //Prepare Form
             ->add('visibility', 'choice', array(
                 'choices'   => array(
                     'owner'   => 'Perso',
@@ -26,18 +26,18 @@ class TpController extends Controller
         
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isValid()) { //If form is valid we save it
 
-            $user = $this->container->get('security.context')->getToken()->getUser();
+            $user = $this->container->get('security.context')->getToken()->getUser(); //Get current user
             $tp->setOwner($user);
             $em = $this->getDoctrine()->getManager();
             $em->persist($tp);
-            $em->flush();
+            $em->flush(); //Save form
             
-            return $this->redirect($this->generateUrl('eliastre100_python_project_homepage'));
+            return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //Then redirect to homepage
         }else{
             
-    	   return $this->render('Eliastre100PythonProjectBundle:Tp:createForm.html.twig', array('form' => $form->createView()));
+    	   return $this->render('Eliastre100PythonProjectBundle:Tp:createForm.html.twig', array('form' => $form->createView())); //Else send form
 
         }
     }

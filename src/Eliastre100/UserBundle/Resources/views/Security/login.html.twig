@@ -6,10 +6,8 @@
 		<h2>Login</h2>
 	    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-	    <!--<label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>-->
 	    <p><input type="text" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" id="username" name="_username" value="{{ last_username }}" required="required" /></p>
 
-	    <!--<label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>-->
 	    <p><input type="password" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" id="password" name="_password" required="required" /></p>
 
 	    <label for="remember">
@@ -17,9 +15,7 @@
 	    	<span>{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</span>
 	    </label>
 	    
-	    <button type="submit"><!--{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}--></button>
-
-	    <!--<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />-->
+	    <button type="submit"></button>
 	</form>
 	<p class="forgot">Forgot your password? <a href="">Click here to reset it.</a></p>
 </div>

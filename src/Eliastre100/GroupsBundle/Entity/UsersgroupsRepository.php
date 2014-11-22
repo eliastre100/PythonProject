@@ -13,6 +13,6 @@ use Doctrine\ORM\EntityRepository;
 class UsersgroupsRepository extends EntityRepository
 {
 	public function getAllIdGroupsFromUser($id){
-		return $this->findByUserId($id);
+		return $this->findByUserId($id); //Return ID of all groups for a special user 
 	}
 }

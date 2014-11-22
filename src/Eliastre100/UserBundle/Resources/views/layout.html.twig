@@ -35,19 +35,11 @@
     {% block fos_user_errors  %}
     {% endblock %}
 
-    <div class="notice"  style="display: none;">
-        <a href="" class="close">close</a>
-        <p class="warn">Whoops! We didn't recognise your username or password. Please try again.</p>
-    </div>
-
-
-
-    <!-- Primary Page Layout -->
-
     <div class="container">
         {% block fos_user_content %}
+            {# Content's block #}
         {% endblock fos_user_content %}
-    </div><!-- container -->
+    </div>
 
     <!-- JS  -->
     {% javascripts '@Eliastre100UserBundle/Resources/public/js/*' %}
