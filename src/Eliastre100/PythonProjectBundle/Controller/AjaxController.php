@@ -4,6 +4,7 @@ namespace Eliastre100\PythonProjectBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Eliastre100\PythonProjectBundle\Entity\Tps;
+use Eliastre100\GroupsBundle\Entity;
 
 class AjaxController extends Controller
 {
@@ -14,10 +15,11 @@ class AjaxController extends Controller
 
     public function loadTreeAction()
     {
-        $repository = $this->getDoctrine()
-            ->getRepository('Eliastre100PythonProjectBundle:Tps');
-        $tps = $repository->findByOwner($this->container->get('security.context')->getToken()->getUser());
-    	return $this->render('Eliastre100PythonProjectBundle:Load:list.html.twig', array('Tps' => $tps));
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $TpsRepo = $this->getDoctrine()->getRepository('Eliastre100PythonProjectBundle:Tps');
+        $Tps = $TpsRepo->getAllGroupTps($user);
+
+    	return $this->render('Eliastre100PythonProjectBundle:Load:list.html.twig', array('Tps' => $Tps));
     }
 
     public function addAction($step)

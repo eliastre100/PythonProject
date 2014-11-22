@@ -5,6 +5,7 @@ namespace Eliastre100\GroupsBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Eliastre100\GroupsBundle\Entity\Groups;
+use Eliastre100\GroupsBundle\Entity\Usersgroups;
 
 class GroupsController extends Controller
 {
@@ -21,11 +22,21 @@ class GroupsController extends Controller
 
     	if ($form->isValid()) {
     		
+            $userGroups = new Usersgroups();
+
             $user = $this->container->get('security.context')->getToken()->getUser();
-    		$group->setOwner($user);
-    		$em = $this->getDoctrine()->getManager();
-    		$em->persist($group);
-    		$em->flush();
+            $group->setOwner($user);
+            $userGroups->setUserId($user->getId());
+
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($group);
+            $em->flush();
+            
+            $userGroups->setGroupId($group->getId());
+            
+            $em->persist($userGroups);
+            $em->flush();
         	
             return $this->redirect($this->generateUrl('eliastre100_python_project_homepage'));
     	}else{

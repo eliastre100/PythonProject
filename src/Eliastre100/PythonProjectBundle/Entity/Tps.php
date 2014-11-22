@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Tps
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Eliastre100\PythonProjectBundle\Entity\TpsRepository")
  */
 class Tps
 {

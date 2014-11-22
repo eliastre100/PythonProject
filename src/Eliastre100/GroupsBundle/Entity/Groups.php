@@ -33,7 +33,6 @@ class Groups
     */
     private $owner;
 
-
     /**
      * Get id
      *
