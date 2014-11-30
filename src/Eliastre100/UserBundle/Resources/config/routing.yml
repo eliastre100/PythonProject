@@ -1,3 +1,0 @@
-eliastre100_user_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: Eliastre100UserBundle:Default:index }
