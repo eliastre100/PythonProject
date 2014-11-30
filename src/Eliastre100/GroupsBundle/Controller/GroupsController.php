@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Eliastre100\GroupsBundle\Entity\Groups;
 use Eliastre100\GroupsBundle\Entity\Usersgroups;
+use Eliastre100\GroupsBundle\Form\Type\HireType;
 
 class GroupsController extends Controller
 {
@@ -44,7 +45,45 @@ class GroupsController extends Controller
 	        return $this->render('Eliastre100GroupsBundle:Create:form.html.twig', array(
 	            'form' => $form->createView(), //Else form isn't completed so send it to user
 	        ));	
-    	}
-        
+    	}  
+    }
+
+    public function hireAction(Request $request)
+    {
+        $userId = $this->container->get('security.context')->getToken()->getUser()->getId();
+        $form = $this->createForm(new HireType($userId));
+
+        $form->handleRequest($request);
+       
+        if ($form->isValid()) {
+
+            $data = $form->getData();
+            //On verifit les infos et on envoi l'enregistrement
+
+            //On verifit que l'utilisateur possède le groupe
+            $groupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Groups');
+            if($groupsRepository->testOwnerGroup($userId, $data['Group']->getId())){
+                //On verfit que l'utilisateur n'est pas deja dans le goupe
+                $UsersGroupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Usersgroups');
+                if(!$UsersGroupsRepository->isIfInGroup($userId, $data['Group']->getId())){
+                    //On sauvegarde l'utilisateur
+                    $userToAdd = new Usersgroups();
+                    $userToAdd->setUserId($userId);
+                    $userToAdd->setGroupId($data['Group']->getId());
+                    
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($userToAdd);
+                    $em->flush();
+
+                    return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //then redirect to homepage
+                }else{
+                    
+                }
+            }else{
+
+            }
+        }else{
+            return $this->render('Eliastre100GroupsBundle:Hire:form.html.twig', array('form' => $form->createView()));     
+        }
     }
 }

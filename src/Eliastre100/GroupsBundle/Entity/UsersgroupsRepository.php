@@ -15,4 +15,19 @@ class UsersgroupsRepository extends EntityRepository
 	public function getAllIdGroupsFromUser($id){
 		return $this->findByUserId($id); //Return ID of all groups for a special user 
 	}
+
+	public function isIfInGroup($userId, $groupId){
+		$return = $this->createQueryBuilder('p')
+    		->where('p.groupId = :groupid')
+    			->setParameter('groupid', $groupId)
+    		->andWhere('p.userId = :userid')
+    			->setParameter('userid', $userId)
+    		->getQuery()
+    		->getResult();
+    	if(empty($return)){
+    		return false;
+    	}else{
+    		return true;
+    	}
+	}
 }

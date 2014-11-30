@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class GroupsRepository extends EntityRepository
 {
+	public function getOwnerGroups($userId){
+		return $this->findByOwnerId($userId);
+	}
+
+	public function testOwnerGroup($userId, $groupId){
+		$return = $this->find($groupId);
+		if($return->getOwner()->getId() == $userId){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
