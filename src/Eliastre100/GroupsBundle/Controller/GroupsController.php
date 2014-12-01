@@ -51,7 +51,7 @@ class GroupsController extends Controller
     public function hireAction(Request $request)
     {
         $userId = $this->container->get('security.context')->getToken()->getUser()->getId();
-        $form = $this->createForm(new HireType($userId));
+        $form = $this->createForm(new HireType($userId, $this->generateUrl('eliastre100_groups_hire')));
 
         $form->handleRequest($request);
        
@@ -65,11 +65,12 @@ class GroupsController extends Controller
             if($groupsRepository->testOwnerGroup($userId, $data['Group']->getId())){
                 //On verfit que l'utilisateur n'est pas deja dans le goupe
                 $UsersGroupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Usersgroups');
-                if(!$UsersGroupsRepository->isIfInGroup($userId, $data['Group']->getId())){
+                if(!$UsersGroupsRepository->isIfInGroup($data['User']->getId(), $data['Group']->getId())){
                     //On sauvegarde l'utilisateur
                     $userToAdd = new Usersgroups();
-                    $userToAdd->setUserId($userId);
+                    $userToAdd->setUserId($data['User']->getId());
                     $userToAdd->setGroupId($data['Group']->getId());
+
                     
                     $em = $this->getDoctrine()->getManager();
                     $em->persist($userToAdd);
@@ -78,6 +79,45 @@ class GroupsController extends Controller
                     return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //then redirect to homepage
                 }else{
                     
+                }
+            }else{
+
+            }
+        }else{
+            return $this->render('Eliastre100GroupsBundle:Hire:form.html.twig', array('form' => $form->createView()));     
+        }
+    }
+
+    public function fireAction(Request $request)
+    {
+        $userId = $this->container->get('security.context')->getToken()->getUser()->getId();
+        $form = $this->createForm(new HireType($userId, $this->generateUrl('eliastre100_groups_fire'), 'Fire'));
+
+        $form->handleRequest($request);
+       
+        if ($form->isValid()) {
+
+            $data = $form->getData();
+            //On verifit les infos et on envoi l'enregistrement
+
+            //On verifit que l'utilisateur possède le groupe
+            $groupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Groups');
+            if($groupsRepository->testOwnerGroup($userId, $data['Group']->getId())){
+                //On verfit que l'utilisateur n'est pas deja dans le goupe
+                $UsersGroupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Usersgroups');
+                if($data['User']->getId() != $userId){              
+                    if($UsersGroupsRepository->isIfInGroup($data['User']->getId(), $data['Group']->getId())){
+                        //On sauvegarde l'utilisateur
+                        $userToRemove = $UsersGroupsRepository->UserInGroup($data['User']->getId(), $data['Group']->getId());
+                        
+                        $em = $this->getDoctrine()->getManager();
+                        $em->remove($userToRemove[0]);
+                        $em->flush();
+
+                        return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //then redirect to homepage
+                    }else{
+                        
+                    }
                 }
             }else{
 

@@ -5,3 +5,7 @@ eliastre100_groups_create:
 eliastre100_groups_hire:
     path:     /groups/hire
     defaults: { _controller: Eliastre100GroupsBundle:Groups:hire }
+
+eliastre100_groups_fire:
+    path:     /groups/fire
+    defaults: { _controller: Eliastre100GroupsBundle:Groups:fire }

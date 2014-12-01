@@ -30,4 +30,14 @@ class UsersgroupsRepository extends EntityRepository
     		return true;
     	}
 	}
+
+    public function userInGroup($userId, $groupId){
+        return $this->createQueryBuilder('p')
+            ->where('p.groupId = :groupid')
+                ->setParameter('groupid', $groupId)
+            ->andWhere('p.userId = :userid')
+                ->setParameter('userid', $userId)
+            ->getQuery()
+            ->getResult();
+    }
 }

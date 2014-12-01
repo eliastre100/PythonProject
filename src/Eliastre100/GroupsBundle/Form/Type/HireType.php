@@ -8,10 +8,13 @@ class HireType extends AbstractType
 {
 
 	private $userId;
+    private $action;
+    private $name;
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->setAction($this->action)
         	->add('User', 'entity', array(
         		'class' => 'Eliastre100\UserBundle\Entity\User'))
         	->add('Group', 'entity', array(
@@ -22,7 +25,7 @@ class HireType extends AbstractType
 			            ->where('u.owner = :id')
     					->setParameter('id', $this->userId);
 			    }))
-        	->add('Hire', 'submit');
+        	->add($this->name, 'submit');
         //$builder->add('dueDate', null, array('widget' => 'single_text'));
     }
 
@@ -31,7 +34,9 @@ class HireType extends AbstractType
         return 'hire';
     }
 
-    public function __construct($userId){
+    public function __construct($userId, $action, $name = 'Hire'){
     	$this->userId = $userId;
+        $this->action = $action;
+        $this->name = $name;
     }
 }
