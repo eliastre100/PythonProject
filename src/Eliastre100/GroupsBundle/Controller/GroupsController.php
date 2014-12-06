@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Eliastre100\GroupsBundle\Entity\Groups;
 use Eliastre100\GroupsBundle\Entity\Usersgroups;
 use Eliastre100\GroupsBundle\Form\Type\HireType;
+use Eliastre100\GroupsBundle\Form\Type\DeleteType;
 
 class GroupsController extends Controller
 {
@@ -125,5 +126,39 @@ class GroupsController extends Controller
         }else{
             return $this->render('Eliastre100GroupsBundle:Hire:form.html.twig', array('form' => $form->createView()));     
         }
+    }
+
+    public function deleteAction(Request $request){
+        $userId = $this->container->get('security.context')->getToken()->getUser()->getId();
+        $form = $this->createForm(new DeleteType($userId, $this->generateUrl('eliastre100_groups_delete'), 'Delete'));
+
+        $form->handleRequest($request);
+       
+        if ($form->isValid()) {
+
+            $data = $form->getData();
+            //On verifit les infos et on envoi l'enregistrement
+
+            //On verifit que l'utilisateur possède le groupe
+            $groupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Groups');
+            if($groupsRepository->testOwnerGroup($userId, $data['Group']->getId())){
+                //On verfit que l'utilisateur n'est pas deja dans le goupe
+                $UsersGroupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Usersgroups');
+                $userToRemove = $UsersGroupsRepository->UserFromGroup($data['Group']->getId());
+                
+                $em = $this->getDoctrine()->getManager();
+                foreach ($userToRemove as $key => $value) {
+                    $em->remove($userToRemove[$key]);
+                }
+                $em->remove($data['Group']);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //then redirect to homepage
+            }else{
+
+            }
+        }else{
+            return $this->render('Eliastre100GroupsBundle:Hire:form.html.twig', array('form' => $form->createView())); 
+        }  
     }
 }

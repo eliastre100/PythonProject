@@ -24,7 +24,7 @@ class UsersgroupsRepository extends EntityRepository
     			->setParameter('userid', $userId)
     		->getQuery()
     		->getResult();
-    	if(empty($return)){
+    	if(empty($return['0'])){
     		return false;
     	}else{
     		return true;
@@ -37,6 +37,14 @@ class UsersgroupsRepository extends EntityRepository
                 ->setParameter('groupid', $groupId)
             ->andWhere('p.userId = :userid')
                 ->setParameter('userid', $userId)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function userFromGroup($groupId){
+        return $this->createQueryBuilder('p')
+            ->where('p.groupId = :groupid')
+                ->setParameter('groupid', $groupId)
             ->getQuery()
             ->getResult();
     }

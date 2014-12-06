@@ -2,6 +2,10 @@ eliastre100_groups_create:
     path:     /groups/create
     defaults: { _controller: Eliastre100GroupsBundle:Groups:create }
 
+eliastre100_groups_delete:
+    path:     /groups/delete
+    defaults: { _controller: Eliastre100GroupsBundle:Groups:delete }
+
 eliastre100_groups_hire:
     path:     /groups/hire
     defaults: { _controller: Eliastre100GroupsBundle:Groups:hire }
