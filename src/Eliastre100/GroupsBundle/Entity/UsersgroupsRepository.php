@@ -16,6 +16,15 @@ class UsersgroupsRepository extends EntityRepository
 		return $this->findByUserId($id); //Return ID of all groups for a special user 
 	}
 
+    public function getAllIdGroupsFromUserArray($id){
+        $groups = $this->getAllIdGroupsFromUser($id);
+        $groupsRepo = $this->_em->getRepository('Eliastre100GroupsBundle:Groups');
+        foreach ($groups as $k => $v) {
+            $groupsArray[$v->getGroupId()] = $groupsRepo->findById($v->getGroupId())[0]->getName(); 
+        }
+        return $groupsArray;
+    }
+
 	public function isIfInGroup($userId, $groupId){
 		$return = $this->createQueryBuilder('p')
     		->where('p.groupId = :groupid')

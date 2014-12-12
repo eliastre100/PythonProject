@@ -8,6 +8,7 @@ use Eliastre100\GroupsBundle\Entity\Groups;
 use Eliastre100\GroupsBundle\Entity\Usersgroups;
 use Eliastre100\GroupsBundle\Form\Type\HireType;
 use Eliastre100\GroupsBundle\Form\Type\DeleteType;
+use Eliastre100\GroupsBundle\Form\Type\LeftType;
 
 class GroupsController extends Controller
 {
@@ -154,6 +155,44 @@ class GroupsController extends Controller
                 $em->flush();
 
                 return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //then redirect to homepage
+            }else{
+
+            }
+        }else{
+            return $this->render('Eliastre100GroupsBundle:Hire:form.html.twig', array('form' => $form->createView())); 
+        }  
+    }
+
+    public function leftAction(Request $request)
+    {
+        $userId = $this->container->get('security.context')->getToken()->getUser()->getId();
+        $em_UserGroups = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Usersgroups');
+        $form = $this->createForm(new LeftType($userId, $this->generateUrl('eliastre100_groups_left'), $em_UserGroups, 'Left'));
+
+        $form->handleRequest($request);
+       
+        if ($form->isValid()) {
+
+            $data = $form->getData();
+            //On verifit les infos et on envoi l'enregistrement
+            //var_dump($data); die();
+
+            if($em_UserGroups->isIfInGroup($userId, $data['Group'])){
+                //On verfit que l'utilisateur n'est pas deja dans le goupe
+                $groupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Groups');
+                if(!$groupsRepository->testOwnerGroup($userId, $data['Group'])){
+                    $userToRemove = $em_UserGroups->UserInGroup($userId, $data['Group']);
+                    
+                    $em = $this->getDoctrine()->getManager();
+                    foreach ($userToRemove as $key => $value) {
+                        $em->remove($userToRemove[$key]);
+                    }
+                    $em->flush();
+
+                    return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //then redirect to homepage
+                }else{
+                    die('L\'administateur du group ne peut pas le quitter il faut pour cela le dissoudre');
+                }
             }else{
 
             }

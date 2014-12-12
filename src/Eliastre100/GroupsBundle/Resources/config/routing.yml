@@ -13,3 +13,7 @@ eliastre100_groups_hire:
 eliastre100_groups_fire:
     path:     /groups/fire
     defaults: { _controller: Eliastre100GroupsBundle:Groups:fire }
+
+eliastre100_groups_left:
+    path:     /groups/left
+    defaults: { _controller: Eliastre100GroupsBundle:Groups:left }
