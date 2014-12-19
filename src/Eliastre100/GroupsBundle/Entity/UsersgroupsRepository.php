@@ -19,6 +19,7 @@ class UsersgroupsRepository extends EntityRepository
     public function getAllIdGroupsFromUserArray($id){
         $groups = $this->getAllIdGroupsFromUser($id);
         $groupsRepo = $this->_em->getRepository('Eliastre100GroupsBundle:Groups');
+        $groupsArray = array();
         foreach ($groups as $k => $v) {
             $groupsArray[$v->getGroupId()] = $groupsRepo->findById($v->getGroupId())[0]->getName(); 
         }
