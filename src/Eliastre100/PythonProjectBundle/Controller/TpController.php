@@ -10,6 +10,9 @@ class TpController extends Controller
 {
     public function createAction(Request $request)
     {
+        $groupsRepository = $this->getDoctrine()->getRepository('Eliastre100GroupsBundle:Groups');
+        $user = $this->container->get('security.context')->getToken()->getUser(); //Get current user
+
         $tp = new Tps();
         $form = $this->createFormBuilder($tp)
             ->setAction($this->generateUrl('eliastre100_python_actions_Tp_create'))
@@ -21,15 +24,32 @@ class TpController extends Controller
                     'class'   => 'Classe',
                     ),
                 'empty_value' => 'Choose a visibility'))
+            ->add('groupe', 'choice', array(
+                'choices' => $groupsRepository->getOwnerGroupsArray($user->getId())))
             ->add('save', 'submit')
             ->getForm();
         
         $form->handleRequest($request);
-
         if ($form->isValid()) { //If form is valid we save it
 
-            $user = $this->container->get('security.context')->getToken()->getUser(); //Get current user
+            $data = $form->getData();
+
             $tp->setOwner($user);
+            $tp->setVisibility($data->getVisibility());
+
+            if($data->getVisibility() == 'group')
+            {
+                $tp->setGroupe($groupsRepository->findById($data->getGroupe())[0]);
+            }
+            elseif($data->getVisibility() == 'class')
+            {
+                //GERER LES CLASSES
+            }
+            else
+            {
+                $tp->setGroupe($groupsRepository->findById($data->getGroupe())[0]); //A DELETE
+
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($tp);
             $em->flush(); //Save form

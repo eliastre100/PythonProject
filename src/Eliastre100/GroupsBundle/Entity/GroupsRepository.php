@@ -13,7 +13,16 @@ use Doctrine\ORM\EntityRepository;
 class GroupsRepository extends EntityRepository
 {
 	public function getOwnerGroups($userId){
-		return $this->findByOwnerId($userId);
+		return $this->findByOwner($userId);
+	}
+
+	public function getOwnerGroupsArray($userId){
+		$data = $this->getOwnerGroups($userId);
+		$return = array();
+		foreach ($data as $key => $value) {
+			$return[$value->getId()] = $value->getName();
+		}
+		return $return;
 	}
 
 	public function testOwnerGroup($userId, $groupId){

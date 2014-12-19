@@ -1,0 +1,365 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"user",
+				"userToRemove"
+			],
+			[
+				"gr",
+				"group"
+			],
+			[
+				"grou",
+				"groupesIds"
+			],
+			[
+				"group",
+				"groups"
+			],
+			[
+				"us",
+				"user"
+			],
+			[
+				"wh",
+				"width"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"font",
+				"font"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"an",
+				"anonymous"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"margi",
+				"margin-right"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"fo",
+				"font-family"
+			],
+			[
+				"m",
+				"margin-left"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Resources/views/Create/form.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Entity/Usersgroups.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Entity/TpsRepository.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Entity/Tps.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Entity/Test.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Load/list.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Resources/views/Delete/Form.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Resources/views/Security/login.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Resources/views/Hire/form.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Form/Type/DeleteType.php",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Form/Type/HireType.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/public/js/base.js",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/public/js/TP.js",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Entity/UsersgroupsRepository.php",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Controller/GroupsController.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Add/step_1.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Resources/config/routing.yml",
+		"/home/antoine/Projets/C++/TD maths/code.html",
+		"/home/antoine/Projets/C++/TD maths/main.cpp",
+		"/home/antoine/Projets/C++/TD maths/obj/Debug/main.o",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Controller/AjaxController.php",
+		"/var/www/html/PythonProject/README.md",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Tp/createForm.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Entity/Groups.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Controller/TpController.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Controller/DefaultController.php",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Resources/views/Default/index.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Entity/GroupsRepository.php",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Resources/views/layout.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Resources/views/Default/index.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Entity/User.php",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Controller/DefaultController.php",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Entity/Users_groups.php",
+		"/var/www/html/PythonProject/src/Eliastre100/GroupsBundle/Entity/Users_groupsRepository.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Entity/test.php",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/config/routing.yml",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/layout.html.twig",
+		"/var/www/html/PythonProject/app/config/config.yml",
+		"/var/www/html/PythonProject/app/config/security.yml",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Resources/public/html/index.html",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/integrer/index.html",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Default/index.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Load/exercice.html.twig",
+		"/var/www/html/PythonProject/app/config/routing.yml",
+		"/var/www/html/PythonProject/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/layout.html.twig",
+		"/var/www/html/PythonProject/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Resources/public/css/layout.css",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/public/css/custombox.css",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/public/css/style.css",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Load/add_step1.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Load/remove_step1.html.twig",
+		"/var/www/html/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/public/js/add.js",
+		"/etc/apache2/apache2.conf",
+		"/var/www/html/PythonProject/web/bundles/eliastre100pythonproject/css/style.css",
+		"/home/antoine/Projets/PHP/PythonProject/correction/2/src/OC/CoreBundle/Resources/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/correction/2/composer.json",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Eliastre100UserBundle.php",
+		"/var/www/html/PythonProject/app/config/parameters.yml",
+		"/var/www/html/PythonProject/app/config/config_dev.yml",
+		"/var/www/html/PythonProject/app/logs/dev.log",
+		"/var/www/html/test.php",
+		"/var/www/html/PythonProject/app/AppKernel.php",
+		"/var/www/html/PythonProject/composer.json",
+		"/var/www/html/PythonProject/src/Eliastre100/UserBundle/Resources/config/routing.yml",
+		"/tmp/fz3temp-1/index.html",
+		"/home/antoine/Projets/PHP/PythonProject/correction/3/src/OC/GouvernBundle/Controller/DefaultController.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/3/src/OC/GouvernBundle/Resources/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/correction/3/src/OC/PlatformBundle/Resources/views/layout.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/correction/3/src/OC/PlatformBundle/OCPlatformBundle.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/3/app/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/correction/3/app/AppKernel.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/2/src/OC/CoreBundle/Controller/MainController.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/2/src/OC/CoreBundle/Resources/views/Main/index.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/correction/2/app/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/correction/2/src/OC/PlatformBundle/Resources/views/layout.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/views/Advert/index.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/correction/1/app/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/correction/1/app/AppKernel.php",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/CoreBundle/Resources/views/layout.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/app/Resources/views/layout.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/views/Advert/menu.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/views/layout.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/views/Advert/view.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/views/Advert/add.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/views/Advert/form.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/views/Advert/edit.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Controller/AdvertController.php",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/PlatformBundle/Resources/config/routing.yml",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/CoreBundle/Resources/views/Acceuil/index.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/CoreBundle/Resources/config/routing.yml",
+		"/home/antoine/Projets/PHP/Openclassrooms/app/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/web/app_dev.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/1/src/OC/PlatformBundle/Resources/views/layout.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/correction/1/src/OC/CoreBundle/Resources/views/Default/index.html.twig",
+		"/home/antoine/Projets/PHP/Openclassrooms/src/OC/CoreBundle/Controller/AcceuilController.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/1/src/OC/CoreBundle/Controller/CoreController.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/1/src/OC/CoreBundle/Resources/views/Core/index.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/correction/1/src/OC/CoreBundle/Controller/DefaultController.php",
+		"/home/antoine/Projets/PHP/PythonProject/correction/2/app/AppKernel.php",
+		"/home/antoine/Projets/PHP/Symfony/style.css",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Controller/LoginController.php",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Controller/DefaultController.php",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Core/index.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Layout.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/app/Resources/views/html.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/design/logged/index.html",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Controller/BaseController.php",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/loginLayout.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Login/login.html.twig",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Controller/CoreController.php",
+		"/home/antoine/Projets/PHP/PythonProject/app/config/routing_dev.yml",
+		"/home/antoine/Projets/PHP/PythonProject/app/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/config/routing.yml",
+		"/home/antoine/Projets/PHP/PythonProject/design/login/index.html",
+		"/home/antoine/Projets/PHP/testGit/test.txt",
+		"/tmp/fz3temp-1/config",
+		"/home/antoine/Projets/PHP/Symfony/index.html",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/public/css/font-awesome/font-awesome.css",
+		"/home/antoine/Projets/PHP/PythonProject/app/AppKernel.php",
+		"/home/antoine/Projets/PHP/PythonProject/src/Eliastre100/PythonProjectBundle/Resources/views/Base/index.html.twig",
+		"/home/antoine/Projets/PHP/Symfony/mediaused/font-awesome-4.2.0/css/font-awesome.css",
+		"/home/antoine/.cache/.fr-JfPsZv/font-awesome-4.2.0/css/font-awesome.css",
+		"/tmp/fz3temp-1/1",
+		"/tmp/fz3temp-1/base.js",
+		"/tmp/fz3temp-1/style.css",
+		"/home/antoine/Projets/PHP/Symfony/test/composer.json",
+		"/home/antoine/Projets/PHP/Symfony/PythonProject/style.css",
+		"/home/antoine/Projets/PHP/Symfony/PythonProject/index.html"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"var",
+			"Owner",
+			"));",
+			"<Direc",
+			"yes"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

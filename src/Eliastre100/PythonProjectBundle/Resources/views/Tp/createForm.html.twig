@@ -1,1 +1,6 @@
-{{ form(form) }}
+{{ form_start(form) }}
+	{{ form_row(form.name) }}
+	Group : {{ form_widget(form.visibility, { 'attr': {'onClick': 'groupSelect();'} }) }}
+	<span id="groupSelect" style="display:none;">{{ form_row(form.groupe) }}</span>
+	{{ form_row(form.save) }}
+{{ form_end(form) }}
