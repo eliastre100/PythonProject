@@ -14,7 +14,7 @@ use Eliastre100\GroupsBundle\Entity;
 
 class TpsRepository extends EntityRepository
 {
-	public function getAllGroupTps($user){;
+	public function getAllGroupTps($user){
 		$groupsSearch = $this->_em->getRepository('Eliastre100GroupsBundle:Usersgroups');
 		$groups = $this->_em->getRepository('Eliastre100GroupsBundle:Groups');
 		
@@ -27,6 +27,19 @@ class TpsRepository extends EntityRepository
 				'name' => $title['0']->getName());
 		}
 
+		return $return;
+	}
+
+	public function getGroupsFromUser($user){
+		$groupsSearch = $this->_em->getRepository('Eliastre100GroupsBundle:Usersgroups');
+		$groups = $this->_em->getRepository('Eliastre100GroupsBundle:Groups');
+		$Tps = $this->_em->getRepository('Eliastre100PythonProjectBundle:Tps');
+		$groupesIds = $groupsSearch->getAllIdGroupsFromUser($user->getid());
+
+		foreach ($groupesIds as $key => $value) {
+			$tps = $this->findByGroupe($value->getGroupId());
+			$return[$value->getGroupId()] = $Tps;
+		}
 		return $return;
 	}
 }

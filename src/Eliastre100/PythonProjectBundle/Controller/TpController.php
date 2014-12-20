@@ -34,27 +34,37 @@ class TpController extends Controller
 
             $data = $form->getData();
 
-            $tp->setOwner($user);
-            $tp->setVisibility($data->getVisibility());
+            if(!empty($data->getName()) && !empty($data->getVisibility())){           
+                
+                if($data->getVisibility() == 'group')
+                {
+                    $tpCreate = $tp;
+                    $tpCreate->setGroupe($groupsRepository->findById($data->getGroupe())[0]);
+                }
+                elseif($data->getVisibility() == 'class')
+                {
+                    $tpCreate = new Tps();
+                    //Class to use
+                }
+                else
+                {
+                    $tpCreate = new Tps();
+                }
 
-            if($data->getVisibility() == 'group')
-            {
-                $tp->setGroupe($groupsRepository->findById($data->getGroupe())[0]);
-            }
-            elseif($data->getVisibility() == 'class')
-            {
-                //GERER LES CLASSES
-            }
-            else
-            {
-                $tp->setGroupe($groupsRepository->findById($data->getGroupe())[0]); //A DELETE
+                $tpCreate->setOwner($user);
+                $tpCreate->setVisibility($data->getVisibility());
+                $tpCreate->setName($data->getName());
 
-            }
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($tp);
-            $em->flush(); //Save form
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($tpCreate);
+                $em->flush(); //Save form
+                
+                return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //Then redirect to homepage
             
-            return $this->redirect($this->generateUrl('eliastre100_python_project_homepage')); //Then redirect to homepage
+            }else{
+
+            }
+
         }else{
             
     	   return $this->render('Eliastre100PythonProjectBundle:Tp:createForm.html.twig', array('form' => $form->createView())); //Else send form

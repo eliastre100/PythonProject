@@ -17,7 +17,7 @@ class AjaxController extends Controller
     {
         $user = $this->container->get('security.context')->getToken()->getUser(); //Get current logged user
         $TpsRepo = $this->getDoctrine()->getRepository('Eliastre100PythonProjectBundle:Tps');
-        $Tps = $TpsRepo->getAllGroupTps($user); //Load all TP from current user
+        $Tps = $TpsRepo->getGroupsFromUser($user); //Load all TP from current user
 
     	return $this->render('Eliastre100PythonProjectBundle:Load:list.html.twig', array('Tps' => $Tps));
     }
